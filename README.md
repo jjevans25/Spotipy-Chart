@@ -1,5 +1,5 @@
 # Spotipy-Chart
-Creates a scatter plot in Streamlit using the Spotipy API
+Creates an interactive scatter plot in Streamlit using the Spotipy API, Spotipy.
 
 
 
