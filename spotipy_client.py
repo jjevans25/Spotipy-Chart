@@ -18,9 +18,9 @@ class SpotifyAPI(object):
     self.client_secret = client_secret
 
   def get_client_credentials(self):
-      """
-      Returns a base64 encoded string
-      """
+      
+      #Returns a base64 encoded string
+      
       client_id = self.client_id
       client_secret = self.client_secret
       if client_secret == None or client_id == None:
@@ -34,8 +34,6 @@ class SpotifyAPI(object):
       return {
         "Authorization": f"Basic {client_creds_b64}" 
       }
-
-  
 
   def get_token_data(self):
       return {
@@ -78,17 +76,6 @@ class SpotifyAPI(object):
           "Authorization": f"Bearer {access_token}"
       }      
       return headers
-
-  def get_resource(self, lookup_id, resource_type='albums', version='v1'):
-      endpoint = f"https://api.spotify.com/{version}/{resource_type}/{lookup_id}" 
-      headers = self.get_resource_header()
-      r = requests.get(endpoint, headers=headers)
-      if r.status_code not in range(200, 299):
-          return {}
-      return r.json()
-
-  def get_artist(self, _id):
-      return self.get_resource(_id, resource_type='artists')
 
   def base_search(self, query_params):
       headers = self.get_resource_header()
