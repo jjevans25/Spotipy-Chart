@@ -20,8 +20,8 @@ button_clicked = st.button("OK")
 from spotipy_client import *
 import pandas as pd
 
-client_id = 'f3ccd4d56b444aaf80a2a1cbdc249a4a'
-client_secret = '4e2f7eaa75d241048a60cddb3419558c'
+client_id = 'your_client_id'
+client_secret = 'your_client_secret'
 
 spotify = SpotifyAPI(client_id, client_secret)
 
